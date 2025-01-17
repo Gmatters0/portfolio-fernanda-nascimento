@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'Sohne Buch';
+    src: url('./fonts/TestSohneBreit-Buch.otf') format('opentype'),
+}
+@font-face {
+    font-family: 'Sohne Mono';
+    src: url('./fonts/TestSohneMono-Buch.otf') format('opentype'),
+}
+
+:root {
+    --bg-color: #F5F5F2;
+    --text-color: #303030;
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sohne Buch', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    padding: 0rem 4rem;
+}
+
+/* Navegação */
+.nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: monospace;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0rem 4rem;
+}
+
+.hero-container {
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    line-height: 1;
+}
+.hero h2 {
+    font-size: 4rem;
+}
+
+.hero h3 {
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.corner {
+    position: absolute;
+    opacity: 0.2;
+    font-size: 1.5rem;
+}
+
+.corner-tl { top: 1rem; left: 1rem; }
+.corner-tr { top: 1rem; right: 1rem; }
+.corner-bl { bottom: 1rem; left: 1rem; }
+.corner-br { bottom: 1rem; right: 1rem; }
+
+/* Featured Works */
+.works {
+    padding: 4rem 0rem;
+}
+
+.works-container {
+    margin: 0 auto;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.work-card {
+    border: 1px solid var(--text-color);
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+}
+
+.work-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0rem;
+    background-color: rgba(48, 48, 48, 0.05);
+}
+
+.about-container {
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.about-skills li {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: monospace;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid var(--text-color);
+}
+
+/* Services */
+.services {
+    padding: 4rem 0rem;
+}
+
+.services-container {
+    margin: 0 auto;
+}
+
+.service {
+    display: flex;
+    border-bottom: 1px solid var(--text-color);
+    padding: 2rem 0;
+    gap: 10rem;
+}
+
+.service-title {
+    width: 35rem;
+}
+
+.service-links {
+    list-style: none;
+    margin-top: 1rem;
+    width: 65rem;
+}
+
+.service-links li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border-bottom: dashed 1px rgba(48, 48, 48, 0.5);
+}
+
+.arrow {
+    font-size: 1.275rem;
+}
+
+/* Contact */
+.contact {
+    padding: 4rem 0rem;
+}
+
+.contact-container {
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    border: 1px solid var(--text-color);
+    padding: 2rem;
+}
+
+.contact-example {
+    background-color: rgba(48, 48, 48, 0.05);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: monospace;
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--text-color);
+    background: none;
+    color: var(--text-color);
+    font-family: monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        order: -1;
+    }
+}
+
