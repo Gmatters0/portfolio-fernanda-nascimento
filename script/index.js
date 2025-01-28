@@ -11,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Adiciona classe ativa na navegação durante o scroll
+// Adiciona classe ativa na navbar durante o scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
     if (window.scrollY > 50) {
