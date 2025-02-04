@@ -32,12 +32,21 @@ a {
 
 @keyframes rotateColor {
     0% {
-        filter: hue-rotator(0deg); 
+      background-color: #6666ff;
     }
-    100% { 
-        filter: hue-rotator(360deg); 
+    25% {
+      background-color: #66ff66;
     }
-}
+    50% {
+      background-color: #ffff66;
+    }
+    75% {
+      background-color: #ff6666;
+    }
+    100% {
+      background-color: #6666ff;
+    }
+  }
 
 .container {
     padding: 0rem 4rem;
@@ -317,12 +326,15 @@ a {
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid #303030;
-    transition: all 0.3s ease;
+    background-color: #f0f0f0;
+    animation: rotateColor 25s linear infinite;
+    animation-play-state: running;
 }
 
-.archive-content-item:hover {
-    animation: rotateColor 1s linear infinite;
-}
+.archive-content-item:not(:hover) {
+    background-color: #f0f0f0 !important;
+  }
+
 
 .date-item {
     display: flex;
