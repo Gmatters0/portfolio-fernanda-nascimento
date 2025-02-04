@@ -30,6 +30,15 @@ a {
     padding: 0.1rem;
 }
 
+@keyframes rotateColor {
+    0% {
+        filter: hue-rotator(0deg); 
+    }
+    100% { 
+        filter: hue-rotator(360deg); 
+    }
+}
+
 .container {
     padding: 0rem 4rem;
 }
@@ -285,17 +294,61 @@ a {
 .archive-content-header {
     display: flex;
     border-bottom: 1px solid #303030;
-    padding-bottom: 0.5rem;
 }
 
 .date-column {
-    width: 20%;
+    width: 15%;
 }
 .name-column {
     width: 65%;
 }
 .type-column {
-    width: 15%;
+    width: 10%;
+}
+.plus-column {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem!important;
+}
+
+.archive-content-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #303030;
+    transition: all 0.3s ease;
+}
+
+.archive-content-item:hover {
+    animation: rotateColor 1s linear infinite;
+}
+
+.date-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    font-weight: lighter;
+    list-style-type: square;
+}
+.square-icon {
+    background-color: #303030;
+    width: 10px;
+    height: 10px;
+}
+
+.name-item {
+    font-family: 'Sohne Buch', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.type-item {
+    width: fit-content;
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+    border: 1px dotted #808080;
 }
 
 

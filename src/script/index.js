@@ -11,6 +11,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+window.onload = () => {
+    const socialMediaArray = document.getElementsByClassName('social-media')
+    const brandArray = document.getElementsByClassName('brand')
+    const videoArray = document.getElementsByClassName('video')
+    const spanCounters = document.getElementsByClassName('contador')
+
+    console.log(spanCounters)
+
+    spanCounters[0].innerHTML = `(${socialMediaArray.length})`
+    spanCounters[1].innerHTML = `(${brandArray.length})`
+    spanCounters[2].innerHTML = `(${videoArray.length})`
+
+}
+
 // Adiciona classe ativa na navegação durante o scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
