@@ -25,6 +25,77 @@ window.onload = () => {
 
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.item-checkbox');
+    const clearButton = document.querySelector('.clear-filters');
+    const archiveItems = document.querySelectorAll('.archive-item');
+
+    function updateVisibility() {
+        const selectedTypes = [];
+        
+        // Verifica cada checkbox
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const label = checkbox.nextElementSibling;
+                
+                // Lógica especial para o Contact
+                if (label.textContent.trim() === 'CONTACT') {
+                    selectedTypes.push('contact');
+                } else {
+                    // Para os outros tipos, usa o ID
+                    switch(label.id) {
+                        case 'titulo1':
+                            selectedTypes.push('social-media');
+                            break;
+                        case 'titulo2':
+                            selectedTypes.push('brand');
+                            break;
+                        case 'titulo3':
+                            selectedTypes.push('video');
+                            break;
+                    }
+                }
+            }
+        });
+
+        console.log('Tipos selecionados:', selectedTypes);
+
+        // Se nenhum filtro selecionado, mostra todos
+        if (selectedTypes.length === 0) {
+            archiveItems.forEach(item => item.style.display = 'block');
+            return;
+        }
+
+        // Verifica cada item
+        archiveItems.forEach(item => {
+            const hasSelectedType = selectedTypes.some(type => {
+                // Para o contact, verifica a classe diretamente
+                if (type === 'contact') {
+                    return item.classList.contains('contact');
+                }
+                // Para os outros tipos, usa as classes dinâmicas
+                return item.classList.contains(type);
+            });
+            
+            console.log('Classes do item:', item.classList);
+            console.log('Deve mostrar?', hasSelectedType);
+            
+            item.style.display = hasSelectedType ? 'block' : 'none';
+        });
+    }
+
+    // Event listeners
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateVisibility);
+    });
+
+    // Clear filters
+    clearButton.addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        archiveItems.forEach(item => item.style.display = 'block');
+    });
+});
+
 // Adiciona classe ativa na navegação durante o scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
@@ -51,5 +122,25 @@ function changeArchiveState() {
         itensList.classList.add('collapsed');
         itensList.classList.remove('expanded');
     }
-
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona os items da lista
+    const servicesItems = document.querySelectorAll('.archive-item');
+    
+    servicesItems.forEach((item) => {
+        const contentItem = item.querySelector('.archive-content-item');
+        const expandedContent = item.querySelector('.expanded-content');
+        
+        contentItem.addEventListener('click', function() {
+            // Simplesmente alterna o estado do item clicado
+            if (expandedContent.classList.contains('d-block')) {
+                // Se já está expandido, fecha
+                expandedContent.classList.remove('d-block');
+            } else {
+                // Se está fechado, expande
+                expandedContent.classList.add('d-block');
+            }
+        });
+    });
+});
