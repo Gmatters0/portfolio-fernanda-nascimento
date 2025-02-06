@@ -17,7 +17,7 @@
 				<a href="#services">[W] SERVICES</a>
 			</div>
 			<div class="nav-links">
-				<a href="#contact">[C] CONTACT ME</a>
+				<a id="contact-me" href="#services">[C] CONTACT ME</a>
 			</div>
 		</div>
 	</nav>
@@ -27,10 +27,11 @@
 			<div class="corner corner-bl">+</div>
 			<div class="corner corner-br">+</div>
 			<div class="hero-container container">
-				<h1>Portfólio</h1>
+				<h1>Portfolio</h1>
 				<h2>Fernanda Nascimento</h2>
 				<h3>Design / Social Media / Copywriting</h3>
 			</div>
+			<div class="hero-placeholder"></div>
 		</section>
 
 		<section id="about" class="about">
@@ -46,11 +47,11 @@
 							engaging content that resonates with target audiences. Whether it's crafting a brand from scratch or
 							revitalizing an existing one, I'm dedicated to delivering results that exceed expectations.</p>
 						<ul class="about-skills">
-							<li>Brand Identity Design</li>
-							<li>Social Media Management</li>
-							<li>Content Creation</li>
-							<li>Copywriting</li>
-							<li>Digital Marketing</li>
+							<li class="about-skills-item">Brand Identity Design</li>
+							<li class="about-skills-item">Social Media Management</li>
+							<li class="about-skills-item">Content Creation</li>
+							<li class="about-skills-item">Copywriting</li>
+							<li class="about-skills-item">Digital Marketing</li>
 						</ul>
 					</div>
 					<div class="about-image img-placeholder">
@@ -88,13 +89,13 @@
 						<p class="clear-filters">CLEAR FILTERS</p>
 					</div>
 					<div class="archives-itens">
-						<div onclick="changeArchiveState()" class="archives-itens-header c-pointer">
+						<div id="archive-itens-header" class="archives-itens-header c-pointer">
 							<img class="arrow c-pointer" src="./icons/downArrow.svg">
 							<img class="archive-icon" src="./icons/openArchive.svg" width="20px">
 							<p>Topic</p>
 						</div>
 						<div class="archives-itens-list">
-							<div class="archives-item c-pointer">
+							<div class="archives-item">
 								<input class="item-checkbox" type="checkbox">
 								<p id="titulo1">SOCIAL MEDIA <span class="contador">(0)</span></p>
 							</div>
@@ -205,7 +206,7 @@
 									<h4>Contact Info</h4>
 									<p>Phone: 11 91234-5678</p>
 									<p>Email: placeholder@email.com</p>
-									<p><a class="c-pointer">LinkedIn | Fernanda Nascimento</a></p>
+									<a class="c-pointer">LinkedIn | Fernanda Nascimento</a>
 									<button class="button">Contact via WhatsApp</button>
 								</div>
 							</div>
@@ -219,8 +220,7 @@
 
 		</section>
 	</main>
-
-	<script src="./script/index.js"></script>
+	<script type="module" src="main.js"></script>
 </body>
 
 </html>

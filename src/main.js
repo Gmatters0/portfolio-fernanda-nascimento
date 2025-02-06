@@ -1,0 +1,7 @@
+import './script/archiveAnimation.js'
+import './script/filter.js'
+import './script/itensCounter.js'
+import './script/itensExpand.js'
+import './script/scroll.js'
+import './script/colorRotation.js'
+import './script/soundEffects.js'
